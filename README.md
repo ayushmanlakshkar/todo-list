@@ -1,2 +1,2 @@
-# todo-list
-the work is under progress
+# Todo-List
+The project is under progress
