@@ -10,17 +10,23 @@
 <body>
     <div class="container">
         <div class="heading">TO-DO-LIST</div>
-        <div id="input"><input class ='variables' type="text" id="item">
-            <input class ='variables' type="datetime-local" name="" id="timestamp">
-        <button type="submit" id="add">ADD</button></div>
-        <div id="clock"></div>
-        <div id="format">
-            <ul id="serialno"> <li class="bolds">S.NO.</li></ul>
-            <ul id="text"><li class="bolds">TO-DO LIST </li></ul>
-            <ul id="donetime"><li class="bolds">TIME</li></ul>
-            <ul id="status"><li class="bolds">STATUS</li></ul>
-            <ul id="todelete"><li class="bolds">DELETE ITEMS</li></ul>
+        <div id="input">
+            <input class ='variables' type="text" id="to_do">
+            <input class ='variables' type="datetime-local"  id="timestamp">
+            <button type="submit" id="add">ADD</button>
         </div>
+        <div id="clock"></div>
+        <div class="box">
+            <ul class="row" id="bolds">
+                <li class="column serial">S.NO.</li>
+                <li class="column task">TASKS</li>
+                <li class="column deadline">DEADLINE</li>
+                <li class="column remove">REMOVE</li>
+            </ul>
+            
+        </div>
+
+        
     </div>
 
 </body>
