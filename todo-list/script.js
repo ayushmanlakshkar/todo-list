@@ -5,12 +5,30 @@ deadline_set = document.getElementById('timestamp')
 box = document.getElementsByClassName('box')[0]
 number = 0
 
+
 clock = () => {
     let fulldate = new Date()
     common_clock.innerHTML = fulldate
     setInterval(clock, 1000);
 }
 clock()
+
+
+load = () => {
+    let previousdata = localStorage.getItem('tabledata')
+    if (previousdata != null) {
+        box.innerHTML = previousdata
+    }
+    let remove = document.getElementsByClassName('remove')
+    for (let i = 1; i < remove.length; i++) {
+        number=number+1 ;
+        remove[i].addEventListener('click', (e) => { 
+            delete_task(e);
+        })
+    }
+}
+load()
+
 
 
 set_deadline = () => {
@@ -36,6 +54,7 @@ serial_rearrange = () => {
 delete_task = (e) => {
     e.target.parentElement.remove();
     serial_rearrange();
+    localStorage.setItem('tabledata', box.innerHTML)
     number = number - 1
 }
 
@@ -73,6 +92,7 @@ add = () => {
         row.appendChild(remove)
         box.appendChild(row)
         remove.addEventListener('click', (e) => { delete_task(e) });
+        localStorage.setItem('tabledata', box.innerHTML)
 
     }
 
